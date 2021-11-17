@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registrar Tutorial</title>
+<script type="text/javascript"
+	th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
+<link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="card">
+		<div class="card-header bg-danger text-white">Listar Tutoriales</div>
+		<div class="card-body">
+			<a th:href="@{/frmRegTutorial}" class="btn btn-success">
+				Registrar Tutorial </a>
+			<hr />
+			<table class="table">
+				<thead>
+					<tr>
+						<th scope="col">Id</th>
+						<th scope="col">Titulo</th>
+						<th scope="col">Descripción</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="tutorial :${listtutoriales}">
+						<td th:text="${tutorial.id}"></td>
+						<td th:text="${tutorial.titulo}"></td>
+						<td th:text="${tutorial.descripcion}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</body>
+</html>

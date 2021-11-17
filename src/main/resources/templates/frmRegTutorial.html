@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Registrar Tutorial</title>
+<script type="text/javascript"
+	th:src="@{/js/bootstrap/bootstrap.bundle.js}"></script>
+<link th:href="@{/css/bootstrap/bootstrap.css}" rel="stylesheet">
+</head>
+<body>
+	<div class="card">
+		<div class="card-header bg-danger text-white">Registrar Tutorial</div>
+		<div class="card-body">
+			<a th:href="@{/frmListTutorial}" class="btn btn-success"
+				id="btnagregarcurso"> Listar Tutorial </a>
+			<hr />
+			<form th:action="@{/frmRegTutorial}" method="post"
+				th:object="${tutorial}">
+				<div class="form-group">
+					<label for="txttitulo">Ingrese el título del tutorial:</label> <input
+						type="text" class="form-control" id="txttitulo" name="titulo"
+						maxlength="50">
+				</div>
+				<div class="form-group">
+					<label for="txtdescripcion">Ingrese la descripción del
+						tutorial:</label> <input type="text" class="form-control"
+						id="txtdescripcion" name="descripcion" maxlength="50">
+				</div>
+				<br />
+				<div class="form-group">
+					<button type="submit" class="btn btn-primary">Registrar</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>
